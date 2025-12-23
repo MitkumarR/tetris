@@ -1,0 +1,17 @@
+Tetris game
+==========
+
+Tetris game is classic retro game. 
+Made with C++ and Raylib library
+
+C++ version 17
+raylib v5.5
+
+Quick start
+===========
+
+Download the releas packages of raylib from https://github.com/raysan5/raylib/releases
+
+Setup raylib `inlude` and `lib` paths with your mingw (or any c/c++ compiler).
+
+Enjoy Tetris game !!!
