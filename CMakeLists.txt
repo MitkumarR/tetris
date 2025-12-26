@@ -7,6 +7,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(SOURCES
     src/main.cpp
     src/Grid.cpp
+    src/Colors.cpp
+    src/Position.cpp
+    src/Block.cpp
 )
 
 # Add include directories
