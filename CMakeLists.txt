@@ -10,6 +10,7 @@ set(SOURCES
     src/Colors.cpp
     src/Position.cpp
     src/Block.cpp
+    src/Game.cpp
 )
 
 # Add include directories

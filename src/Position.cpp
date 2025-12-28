@@ -1,7 +1,7 @@
 #include "Position.h"
 
-Position::Position(int Row, int Col)
+Position::Position(int row, int col)
 {
-    this->Row = Row;
-    this->Col = Col;
+    this->Row = row;
+    this->Col = col;
 }
