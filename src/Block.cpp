@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "Block.h"
 
 Block::Block()
@@ -19,10 +20,16 @@ void Block::Draw()
     }
 }
 
-void Block::Move(int X, int Y)
+void Block::Move(int x, int y)
 {
-    RowOffset += X;
-    ColOffset += Y;
+    RowOffset += x;
+    ColOffset += y;
+}
+
+void Block::Rotate(int sign)
+{
+    if(abs(sign) == 1) RotationState = (RotationState + sign) % 4;
+
 }
 
 std::vector<Position> Block::GetCellPositions()

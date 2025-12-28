@@ -20,5 +20,6 @@ public:
     std::map<int, std::vector<Position>> Cells;
     std::vector<Position> GetCellPositions();  
     void Draw();
-    void Move(int X, int Y);
+    void Move(int x, int y);
+    void Rotate(int sign);
 };

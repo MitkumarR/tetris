@@ -6,6 +6,19 @@
 const int ROWS = 20;
 const int COLS = 10;
 
+double LastUpdateTime = 0;
+
+bool EventTriggered(double interval)
+{
+	double CurrentTime = GetTime();
+	if(CurrentTime - LastUpdateTime >= interval)
+	{
+		LastUpdateTime = CurrentTime;
+		return true;
+	}
+
+	return false;
+}
 int main()
 {
 	srand(time(0));
@@ -16,6 +29,7 @@ int main()
 	while (!WindowShouldClose())
 	{
 		Tetris.HandleInput();
+		if(EventTriggered(0.5)) Tetris.MoveBlockDown();
 		BeginDrawing();
 		ClearBackground(WHITE);
 		

@@ -16,5 +16,8 @@ public:
     std::vector<Block> GetAllBlocks();
     void Draw();
     void HandleInput();
+    void MoveBlockDown();
+    void LockBlock();
     bool IsBlockOutside();
+    bool BlockFits();
 };

@@ -51,6 +51,9 @@ public:
     {
         id = 4;
         Cells[0] = {Position(0, 0), Position(0, 1), Position(1, 0), Position(1, 1)};
+        Cells[1] = Cells[0];
+        Cells[2] = Cells[0];
+        Cells[3] = Cells[0];
         Move(0, 3);
         
     }

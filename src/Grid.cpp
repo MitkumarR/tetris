@@ -36,3 +36,48 @@ bool Grid::IsCellOutside(int row, int col   )
     if(row >= 0 && row < NumRows && col >= 0 && col < NumCols) return false;
     return true; 
 }
+
+bool Grid::IsCellEmpty(int row, int col)
+{
+    if(Matrix[row][col] == 0) return true;
+    return false;
+}
+
+bool Grid::IsRowCompleted(int row)
+{
+    for(int i = 0; i < NumCols; i++)
+        if(Matrix[row][i] == 0) return false;
+    
+    return true;
+}
+
+void Grid::RemoveRow(int row)
+{
+    for(int i = 0; i < NumCols; i++)
+        Matrix[row][i] = 0; 
+}
+
+void Grid::MoveRowDown(int row, int count)
+{
+    for(int i = 0; i < NumCols; i++)
+        Matrix[row + count][i] = Matrix[row][i];
+}
+
+int Grid::RemoveAllRows()
+{
+    int RowRemoved = 0;
+    for(int i = NumRows - 1; i >= 0; i--)
+    {
+        if(IsRowCompleted(i))
+        {
+            RemoveRow(i);
+            RowRemoved++;
+        }
+        else if (RowRemoved > 0)
+        {
+            MoveRowDown(i, RowRemoved);
+        }
+    }
+    
+    return RowRemoved;
+}
